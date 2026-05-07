@@ -1,23 +1,47 @@
 body {
-    font-family: Arial, sans-serif;
-    /*background-color: #f0f8ff;*/
-    text-align: center;
-    margin-top: 50px;
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  text-align: center;
+  margin-top: 50px;
 }
+
 h1 {
-    color: #2c3e50;
+  color: #2c3e50;
 }
+
 input {
-    padding: 8px;
-    margin: 10px;
+  padding: 8px;
+  margin: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
 }
+
+input.valido {
+  border-color: green;
+}
+
+input.invalido {
+  border-color: red;
+}
+
 button {
-    padding: 8px 15px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    cursor: pointer;
+  padding: 8px 15px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
 }
+
 button:hover {
-    background-color: #2980b9;
+  background-color: #2980b9;
+}
+
+.error {
+  color: red;
+}
+
+.exito {
+  color: green;
 }

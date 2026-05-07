@@ -2,24 +2,24 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Bienvenido a mi pagina web</title>
-    <p>
-      Este proyecto fue publicado usando GitHub y fue un lio demasiado garnde.
-    </p>
-    <!-- Enlace al archivo CSS -->
+    <title>Bienvenido a mi página web</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <h1>Mi Primer Proyecto con Git</h1>
+
+    <!-- Sección saludo -->
     <p>Ingrese su nombre:</p>
     <input type="text" id="nombre" placeholder="Escribe tu nombre" />
     <button onclick="saludar()">Saludar</button>
     <p id="resultado"></p>
-    <!-- Enlace al archivo JavaScript -->
+
+    <!-- Sección contacto -->
+    <h2>Formulario de contacto</h2>
+    <input type="email" id="correo" placeholder="Ingrese su correo" />
+    <button onclick="validarCorreo()">Validar correo</button>
+    <p id="mensajeCorreo"></p>
+
     <script src="script.js"></script>
   </body>
-  <h2>Formulario de contacto</h2>
-  <input type="email" id="correo" placeholder="Ingrese su correo" />
-  <button onclick="validarCorreo()">Validar correo</button>
-  <p id="mensajeCorreo"></p>
 </html>
