@@ -1,38 +1,36 @@
-function saludar() {
-  const inputNombre = document.getElementById("nombre");
-  const nombre = inputNombre.value.trim();
-  const resultado = document.getElementById("resultado");
+// Validación en tiempo real del nombre
+document.getElementById("nombre").addEventListener("input", function () {
+  const nombre = this.value.trim();
 
   if (nombre === "") {
-    inputNombre.className = "invalido";
-    resultado.className = "error";
-    resultado.innerText = "Por favor, ingresa tu nombre.";
+    this.className = "invalido";
+  } else if (nombre.length < 3) {
+    this.className = "invalido";
+    document.getElementById("resultado").className = "error";
+    document.getElementById("resultado").innerText =
+      "El nombre debe tener al menos 3 caracteres.";
   } else {
-    inputNombre.className = "valido";
-    resultado.className = "exito";
-    resultado.innerText = "Hola " + nombre + ", bienvenido al sistema.";
+    this.className = "valido";
+    document.getElementById("resultado").innerText = "";
   }
-}
+});
 
-function validarCorreo() {
-  const inputCorreo = document.getElementById("correo");
-  const correo = inputCorreo.value.trim();
-  const mensaje = document.getElementById("mensajeCorreo");
-
-  // Expresión regular para validar formato de correo
+// Validación en tiempo real del correo
+document.getElementById("correo").addEventListener("input", function () {
   const patronCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const correo = this.value.trim();
 
   if (correo === "") {
-    inputCorreo.className = "invalido";
-    mensaje.className = "error";
-    mensaje.innerText = "Debe ingresar un correo.";
+    this.className = "";
+    document.getElementById("mensajeCorreo").innerText = "";
   } else if (!patronCorreo.test(correo)) {
-    inputCorreo.className = "invalido";
-    mensaje.className = "error";
-    mensaje.innerText = "El formato del correo no es válido.";
+    this.className = "invalido";
+    document.getElementById("mensajeCorreo").className = "error";
+    document.getElementById("mensajeCorreo").innerText =
+      "Formato de correo inválido.";
   } else {
-    inputCorreo.className = "valido";
-    mensaje.className = "exito";
-    mensaje.innerText = "Correo registrado correctamente.";
+    this.className = "valido";
+    document.getElementById("mensajeCorreo").className = "exito";
+    document.getElementById("mensajeCorreo").innerText = "Correo válido ✓";
   }
-}
+});
